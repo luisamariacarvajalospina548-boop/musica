@@ -1,0 +1,272 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:black;
+position:sticky;
+top:0;
+}
+
+header h1{
+font-size:28px;
+}
+
+/* MENU */
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:40px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+padding:8px 12px;
+border-radius:6px;
+}
+
+.nav-links a:hover{
+background:#1db954;
+}
+
+/* HERO */
+
+.hero{
+background-image:url("../img/fondo.avif");
+background-size:cover;
+background-position:center;
+height:500px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+animation:fade 2s;
+}
+
+.hero h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+button{
+background:#1db954;
+border:none;
+padding:12px 30px;
+font-size:16px;
+color:white;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#000000;
+transform:scale(1.05);
+}
+
+/* SECCIONES */
+
+section{
+padding:60px;
+}
+
+section h2{
+margin-bottom:30px;
+font-size:28px;
+}
+
+/* CARDS */
+
+.cards{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#1a1a1a;
+padding:15px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+cursor:pointer;
+}
+
+.card img{
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#222;
+}
+/* NUEVOS LANZAMIENTOS */
+
+.lanzamientos{
+padding:60px;
+background:#0b0b0b;
+}
+
+.titulo-seccion{
+font-size:28px;
+margin-bottom:30px;
+text-align:center;
+}
+
+/* GRID DE LANZAMIENTOS */
+
+.lanzamientos-grid{
+display:grid;
+grid-template-columns:repeat(3, 320px);
+gap:35px;
+justify-content:center;
+}
+
+
+/* TARJETAS */
+
+.lanzamiento-card{
+width:320px;
+border-radius:14px;
+overflow:hidden;
+position:relative;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+background:#111;
+}
+
+.lanzamiento-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+transition:0.4s;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:15px;
+background:linear-gradient(transparent,rgba(0,0,0,0.9));
+color:white;
+transform:translateY(40px);
+transition:0.4s;
+}
+
+/* BOTON PLAY */
+
+.play{
+background:#1db954;
+border:none;
+width:35px;
+height:35px;
+border-radius:50%;
+color:white;
+font-size:14px;
+margin-top:8px;
+cursor:pointer;
+opacity:0;
+transform:scale(0.8);
+transition:0.3s;
+}
+
+/* EFECTOS HOVER */
+
+.lanzamiento-card:hover img{
+transform:scale(1.1);
+}
+
+.lanzamiento-card:hover .overlay{
+transform:translateY(0);
+}
+
+.lanzamiento-card:hover .play{
+opacity:1;
+transform:scale(1);
+}
+/* GENEROS */
+
+.generos{
+padding:60px;
+background:#0b0b0b;
+}
+
+.generos-grid{
+display:grid;
+grid-template-columns:repeat(4, 200px);
+gap:30px;
+justify-content:center;
+}
+
+/* TARJETAS */
+
+.genero-card{
+height:120px;
+width: 200px;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+color:white;
+}
+
+/* COLORES */
+
+.reggaeton{
+background:#832c2c;
+}
+
+.pop{
+background:#a53680;
+}
+
+.rock{
+background:#ff9900;
+}
+
+.electronica{
+background:#3399ff;
+}
+
+/* EFECTO HOVER */
+
+.genero-card:hover{
+transform:scale(1.08);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
