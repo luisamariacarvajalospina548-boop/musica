@@ -1,0 +1,93 @@
+/* Fuente de Google */
+
+body{
+font-family: 'Poppins', sans-serif;
+background:#121212;
+color:white;
+margin:0;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#000;
+}
+
+header h1{
+color:#1db954;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#1db954;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(90deg,#1db954,#191414);
+}
+
+.hero h2{
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* TITULO */
+
+.titulo-seccion{
+text-align:center;
+margin:40px 0;
+font-size:28px;
+}
+
+/* GRID */
+
+.generos-grid{
+display:grid;
+grid-template-columns:repeat(4, 1fr);
+gap:25px;
+padding:40px;
+}
+
+/* TARJETAS */
+
+.genero-card{
+background:#181818;
+border-radius:10px;
+overflow:hidden;
+text-align:center;
+transition:0.3s;
+}
+
+.genero-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.genero-card h3{
+padding:15px;
+}
+
+.genero-card:hover{
+transform:scale(1.05);
+background:#282828;
+}
