@@ -8,6 +8,7 @@ font-family:Arial, Helvetica, sans-serif;
 body{
 background:#0f0f0f;
 color:white;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -20,6 +21,7 @@ padding:20px 60px;
 background:black;
 position:sticky;
 top:0;
+z-index:100;
 }
 
 header h1{
@@ -32,6 +34,7 @@ font-size:28px;
 list-style:none;
 display:flex;
 gap:40px;
+flex-wrap:wrap;
 }
 
 .nav-links a{
@@ -53,13 +56,13 @@ background:#1db954;
 background-image:url("../img/fondo.avif");
 background-size:cover;
 background-position:center;
-height:500px;
+min-height:500px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fade 2s;
+padding:40px 20px;
 }
 
 .hero h2{
@@ -70,6 +73,7 @@ margin-bottom:20px;
 .hero p{
 font-size:18px;
 margin-bottom:20px;
+max-width:600px;
 }
 
 button{
@@ -84,14 +88,16 @@ transition:0.3s;
 }
 
 button:hover{
-background:#000000;
+background:#000;
 transform:scale(1.05);
 }
 
 /* SECCIONES */
 
 section{
-padding:60px;
+padding:60px 40px;
+max-width:1300px;
+margin:auto;
 }
 
 section h2{
@@ -99,12 +105,12 @@ margin-bottom:30px;
 font-size:28px;
 }
 
-/* CARDS */
+/* ARTISTAS */
 
 .cards{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
 }
 
 .card{
@@ -117,7 +123,7 @@ cursor:pointer;
 }
 
 .card img{
-width:160px;
+width:100%;
 height:160px;
 object-fit:cover;
 border-radius:10px;
@@ -128,10 +134,10 @@ margin-bottom:10px;
 transform:translateY(-10px);
 background:#222;
 }
-/* NUEVOS LANZAMIENTOS */
+
+/* LANZAMIENTOS */
 
 .lanzamientos{
-padding:60px;
 background:#0b0b0b;
 }
 
@@ -141,72 +147,79 @@ margin-bottom:30px;
 text-align:center;
 }
 
-/* GRID DE LANZAMIENTOS */
-
 .lanzamientos-grid{
 display:grid;
-grid-template-columns:repeat(3, 320px);
-gap:35px;
-justify-content:center;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
 
-
-/* TARJETAS */
-
 .lanzamiento-card{
-width:320px;
-border-radius:14px;
-overflow:hidden;
-position:relative;
-transition:0.4s;
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
-background:#111;
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lanzamiento-card img{
-width:100%;
-height:170px;
-object-fit:cover;
-transition:0.4s;
+width: 100%;
+height: 200px;
+object-fit: cover;
+display: block;
+transition: transform 0.4s ease;
 }
 
-/* OVERLAY */
+
+.info{
+position: absolute;
+bottom: 10px;
+left: 10px;
+color: white;
+}
 
 .overlay{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-padding:15px;
-background:linear-gradient(transparent,rgba(0,0,0,0.9));
-color:white;
-transform:translateY(40px);
-transition:0.4s;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.8);
+color: white;
+padding: 20px;
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.3s ease;
 }
 
-/* BOTON PLAY */
+.lanzamiento-card:hover{
+transform: translateY(-8px) scale(1.05);
+box-shadow: 0px 10px 25px rgba(0,0,0,0.6);
+}
+
+.lanzamiento-card:hover .overlay{
+opacity: 1;
+transform: translateY(0);
+}
 
 .play{
-background:#1db954;
-border:none;
-width:35px;
-height:35px;
-border-radius:50%;
-color:white;
-font-size:14px;
-margin-top:8px;
-cursor:pointer;
-opacity:0;
-transform:scale(0.8);
-transition:0.3s;
+position: absolute;
+bottom: 15px;
+right: 15px;
+background: #1db954;
+border: none;
+border-radius: 50%;
+width: 45px;
+height: 45px;
+color: white;
+font-size: 18px;
+cursor: pointer;
+opacity: 0;
+transform: scale(0.5);
+transition: all 0.3s ease;
 }
-
-/* EFECTOS HOVER */
-
 .lanzamiento-card:hover img{
-transform:scale(1.1);
+transform: scale(1.1);
 }
-
 .lanzamiento-card:hover .overlay{
 transform:translateY(0);
 }
@@ -215,25 +228,21 @@ transform:translateY(0);
 opacity:1;
 transform:scale(1);
 }
+
 /* GENEROS */
 
 .generos{
-padding:60px;
 background:#0b0b0b;
 }
 
 .generos-grid{
 display:grid;
-grid-template-columns:repeat(4, 200px);
-gap:30px;
-justify-content:center;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
 }
-
-/* TARJETAS */
 
 .genero-card{
 height:120px;
-width: 200px;
 border-radius:15px;
 display:flex;
 align-items:center;
@@ -244,8 +253,6 @@ cursor:pointer;
 transition:0.3s;
 color:white;
 }
-
-/* COLORES */
 
 .reggaeton{
 background:#832c2c;
@@ -263,10 +270,86 @@ background:#ff9900;
 background:#3399ff;
 }
 
-/* EFECTO HOVER */
-
 .genero-card:hover{
 transform:scale(1.08);
-
 box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* LAPTOP */
+
+@media (max-width:1200px){
+
+header{
+padding:20px 40px;
+}
+
+.hero h2{
+font-size:34px;
+}
+
+}
+
+/* TABLET */
+
+@media (max-width:900px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.nav-links{
+justify-content:center;
+gap:20px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+section{
+padding:50px 25px;
+}
+
+}
+
+/* MOVIL */
+
+@media (max-width:600px){
+
+.hero{
+min-height:420px;
+}
+
+.hero h2{
+font-size:26px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+button{
+padding:10px 22px;
+font-size:14px;
+}
+
+section{
+padding:40px 20px;
+}
+
+}
+
+/* MOVIL PEQUEÑO */
+
+@media (max-width:400px){
+
+.nav-links a{
+font-size:14px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
 }
